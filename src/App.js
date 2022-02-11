@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
-
+import { BallTriangle } from "react-loader-spinner";
 const notify = () =>
   toast("No more info!", {
     icon: "👀",
@@ -32,7 +32,17 @@ function App() {
   if (loading) {
     return (
       <section className="section loading">
-        <h1> loading...</h1>
+        <h1>
+          {" "}
+          loading...
+          <BallTriangle
+            heigth="100"
+            width="100"
+            color="grey"
+            ariaLabel="loading-indicator"
+            wrapperClass="spinner"
+          />
+        </h1>
       </section>
     );
   }
